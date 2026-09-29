@@ -25,7 +25,7 @@ concurrency:
 jobs:
   sonde:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 7
     steps:
       - uses: actions/checkout@v4
 
