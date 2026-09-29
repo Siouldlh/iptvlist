@@ -269,6 +269,11 @@ def main():
                               % age_hours(prev_ts))
         entries[check["id"]] = entry
 
+    if not probe_url:
+        # Mode prod : l'entree de la sonde de test n'a rien a faire dans
+        # l'etat (sinon incident.py la traiterait comme une vraie panne).
+        entries.pop("sonde-test", None)
+
     snapshot = {
         "generated_at": now_iso(),
         "mode": "test" if probe_url else "prod",
