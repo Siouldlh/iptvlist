@@ -34,8 +34,8 @@ jobs:
           # Topic ntfy.sh pingue par le NAS apres chaque cycle de sauvegarde
           # reussi (BACKUP_ALERT_HEARTBEAT_URL dans le .env du NAS). Secret
           # par obscurite : voir la limite documentee dans le README.
-          BACKUP_HB_TOPIC: cm-bk-hb-a06bbb8986fc05c9680fc9a3
-          BACKUP_MAX_AGE_H: "26"
+          BACKUP_HB_TOPIC: cm-bk-hb-e2e-topic-inexistant-absence-simulee
+          BACKUP_MAX_AGE_H: "0"
           PAUSED: ${{ vars.PAUSED }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: python3 supervision/heartbeat.py
