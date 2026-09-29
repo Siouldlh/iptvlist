@@ -48,9 +48,7 @@ jobs:
           git pull --rebase origin main || true
           git add supervision/etat.json
           if ! git diff --cached --quiet; then
-            git commit -m "supervision: snapshot etat $(date -u '+%Y-%m-%dT%H:%M:%SZ') [skip ci]
-
-Co-Authored-By: Paperclip <noreply@paperclip.ing>"
+            git commit -m "supervision: snapshot etat $(date -u '+%Y-%m-%dT%H:%M:%SZ') [skip ci]" -m "Co-Authored-By: Paperclip <noreply@paperclip.ing>"
             for i in 1 2 3; do
               git push && break
               git pull --rebase origin main || true
