@@ -111,7 +111,7 @@ def agentmail_prev(check_id):
 
 
 def record(check_id, state, subject, text, to):
-    idem = "%s:%s:%d" % (check_id, state, int(time.time() // 300))
+    idem = "%s-%s-%d" % (check_id, state, int(time.time() // 300))
     res = http_json(
         "POST", "/inboxes/%s/messages/send" % urllib.parse.quote(INBOX, safe=""),
         {"to": [to], "subject": subject, "text": text,
