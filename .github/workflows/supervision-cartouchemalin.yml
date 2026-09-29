@@ -36,7 +36,7 @@ jobs:
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           PAUSED: ${{ vars.PAUSED }}
-          PROBE_URL: ${{ inputs.probe_url || '' }}
+          PROBE_URL: ${{ github.event.inputs.probe_url || '' }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: python3 supervision/check.py
 
