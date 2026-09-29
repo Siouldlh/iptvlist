@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-09-29T23:01:31Z",
+  "heartbeat": {
+    "age_hours": 0.0,
+    "bootstrap": true,
+    "last_checked_at": "2026-09-29T23:01:31Z",
+    "last_seen_at": "2026-09-29T23:01:31Z",
+    "max_age_h": 26.0,
+    "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/36642918801",
+    "state": "up"
+  },
+  "paused": false,
+  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/36642918801"
+}
