@@ -37,20 +37,20 @@
       "url": "https://cartouchemalin.fr/sitemap.xml"
     },
     "sonde-test": {
-      "fail_streak": 1,
+      "fail_streak": 2,
       "label": "Sonde de test",
-      "last_alert_at": "2026-09-29T22:38:47Z",
+      "last_alert_at": "2026-09-29T23:04:15Z",
       "last_err": "",
       "last_http": 404,
-      "last_ms": 534,
-      "last_seen_at": "2026-09-29T23:03:48Z",
+      "last_ms": 435,
+      "last_seen_at": "2026-09-29T23:04:15Z",
       "since": "2026-09-29T23:03:48Z",
-      "state": "failing",
+      "state": "down",
       "url": "https://cartouchemalin.fr/sonde-test-panne"
     }
   },
-  "generated_at": "2026-09-29T23:03:48Z",
+  "generated_at": "2026-09-29T23:04:15Z",
   "mode": "test",
   "paused": false,
-  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/36643132586"
+  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/36643176688"
 }
