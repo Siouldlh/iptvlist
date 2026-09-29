@@ -1,0 +1,64 @@
+name: supervision-heartbeat-backups
+
+on:
+  schedule:
+    # Toutes les 2 h : detection d'une absence de ping entre 26 et 28 h
+    # apres le dernier cycle de sauvegarde reussi (cycle quotidien + marge).
+    - cron: "7 */2 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/supervision-heartbeat-backups.yml"
+      - "supervision/heartbeat.py"
+      - "supervision/heartbeat-etat.json"
+      - "supervision/incident.py"
+      - "supervision/PAUSED"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: supervision-heartbeat-backups
+  cancel-in-progress: false
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verification du battement de coeur des sauvegardes
+        env:
+          # Topic ntfy.sh pingue par le NAS apres chaque cycle de sauvegarde
+          # reussi (BACKUP_ALERT_HEARTBEAT_URL dans le .env du NAS). Secret
+          # par obscurite : voir la limite documentee dans le README.
+          BACKUP_HB_TOPIC: cm-bk-hb-a06bbb8986fc05c9680fc9a3
+          BACKUP_MAX_AGE_H: "26"
+          PAUSED: ${{ vars.PAUSED }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python3 supervision/heartbeat.py
+
+      - name: Snapshot d'etat
+        if: always()
+        run: |
+          git config user.name "supervision-cartouchemalin"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add supervision/heartbeat-etat.json
+          if ! git diff --cached --quiet; then
+            git commit -m "supervision: snapshot heartbeat $(date -u '+%Y-%m-%dT%H:%M:%SZ') [skip ci]" -m "Co-Authored-By: Paperclip <noreply@paperclip.ing>"
+            for i in 1 2 3; do
+              git push && break
+              git pull --rebase origin main || true
+              sleep 5
+            done
+          fi
+
+      - name: Issue d'incident (ouverture a l'alerte, cloture au retablissement)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create panne-sauvegardes --repo "$GITHUB_REPOSITORY" --color D93F0B --force >/dev/null 2>&1 || true
+          python3 supervision/incident.py supervision/heartbeat-etat.json panne-sauvegardes "sauvegardes cartouchemalin"

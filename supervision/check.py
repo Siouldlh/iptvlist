@@ -148,6 +148,13 @@ def load_etat(path):
 def main():
     etat_path = os.path.join("supervision", "etat.json")
     probe_url = os.environ.get("PROBE_URL", "").strip()
+    # Déclencheur de test sans permission workflow_dispatch : si le fichier
+    # supervision/test-probe-url.txt existe (commité), la sonde ponctuelle
+    # part de son contenu. Retirer le fichier pour revenir en mode prod.
+    test_file = os.path.join("supervision", "test-probe-url.txt")
+    if not probe_url and os.path.exists(test_file):
+        with open(test_file) as f:
+            probe_url = f.read().strip()
     paused = os.environ.get("PAUSED", "").strip() == "1" or \
         os.path.exists(os.path.join("supervision", "PAUSED"))
     run_url = os.environ.get("RUN_URL", "").strip()
