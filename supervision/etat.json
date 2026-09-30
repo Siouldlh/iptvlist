@@ -6,9 +6,9 @@
       "last_alert_at": null,
       "last_err": "",
       "last_http": 200,
-      "last_ms": 401,
-      "last_seen_at": "2026-09-30T07:21:24Z",
-      "since": "2026-09-30T07:21:24Z",
+      "last_ms": 525,
+      "last_seen_at": "2026-09-30T13:58:06Z",
+      "since": "2026-09-30T13:58:06Z",
       "state": "up",
       "url": "https://cartouchemalin.fr/"
     },
@@ -18,9 +18,9 @@
       "last_alert_at": null,
       "last_err": "",
       "last_http": 200,
-      "last_ms": 441,
-      "last_seen_at": "2026-09-30T07:21:24Z",
-      "since": "2026-09-30T07:21:24Z",
+      "last_ms": 472,
+      "last_seen_at": "2026-09-30T13:58:06Z",
+      "since": "2026-09-30T13:58:06Z",
       "state": "up",
       "url": "https://cartouchemalin.fr/cartouche/047b00ff-d2c1-421b-a6b8-09464c3042b2"
     },
@@ -30,15 +30,15 @@
       "last_alert_at": null,
       "last_err": "",
       "last_http": 200,
-      "last_ms": 379,
-      "last_seen_at": "2026-09-30T07:21:24Z",
-      "since": "2026-09-30T07:21:24Z",
+      "last_ms": 474,
+      "last_seen_at": "2026-09-30T13:58:06Z",
+      "since": "2026-09-30T13:58:06Z",
       "state": "up",
       "url": "https://cartouchemalin.fr/sitemap.xml"
     }
   },
-  "generated_at": "2026-09-30T07:21:25Z",
+  "generated_at": "2026-09-30T13:58:08Z",
   "mode": "prod",
   "paused": false,
-  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/36683209027"
+  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/36725524878"
 }
