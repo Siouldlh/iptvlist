@@ -1,5 +1,8 @@
 name: supervision-cartouchemalin
 
+# Sondes externes cartouchemalin.fr (accueil, fiche produit, sitemap) toutes les 5 min.
+# Alerte : issue d'incident + e-mail/ntfy. Doc : supervision/README.md.
+
 on:
   schedule:
     - cron: "*/5 * * * *"
