@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-03T16:11:56Z",
+  "generated_at": "2026-10-03T21:09:30Z",
   "heartbeat": {
-    "age_hours": 17.13,
+    "age_hours": 22.09,
     "bootstrap": false,
     "last_alert_at": "2026-09-29T23:08:01Z",
-    "last_checked_at": "2026-10-03T16:11:56Z",
+    "last_checked_at": "2026-10-03T21:09:30Z",
     "last_seen_at": "2026-10-02T23:04:24Z",
     "max_age_h": 26.0,
-    "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/37135961083",
+    "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/37154100172",
     "state": "up"
   },
   "paused": false,
-  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/37135961083"
+  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/37154100172"
 }
