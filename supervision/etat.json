@@ -1,44 +1,44 @@
 {
   "checks": {
     "accueil": {
-      "fail_streak": 5,
+      "fail_streak": 6,
       "label": "Accueil",
-      "last_alert_at": "2026-10-09T15:33:19Z",
+      "last_alert_at": "2026-10-10T00:05:54Z",
       "last_err": "",
       "last_http": 530,
-      "last_ms": 183,
-      "last_seen_at": "2026-10-09T20:18:29Z",
+      "last_ms": 160,
+      "last_seen_at": "2026-10-10T00:05:54Z",
       "since": "2026-10-08T21:58:33Z",
       "state": "down",
       "url": "https://cartouchemalin.fr/"
     },
     "fiche-produit": {
-      "fail_streak": 5,
+      "fail_streak": 6,
       "label": "Fiche produit",
-      "last_alert_at": "2026-10-09T15:33:19Z",
+      "last_alert_at": "2026-10-10T00:05:54Z",
       "last_err": "",
       "last_http": 530,
-      "last_ms": 377,
-      "last_seen_at": "2026-10-09T20:18:29Z",
+      "last_ms": 34,
+      "last_seen_at": "2026-10-10T00:05:54Z",
       "since": "2026-10-08T21:58:33Z",
       "state": "down",
       "url": "https://cartouchemalin.fr/cartouche/047b00ff-d2c1-421b-a6b8-09464c3042b2"
     },
     "sitemap": {
-      "fail_streak": 5,
+      "fail_streak": 6,
       "label": "Sitemap",
-      "last_alert_at": "2026-10-09T15:33:19Z",
+      "last_alert_at": "2026-10-10T00:05:54Z",
       "last_err": "",
       "last_http": 530,
-      "last_ms": 104,
-      "last_seen_at": "2026-10-09T20:18:29Z",
+      "last_ms": 49,
+      "last_seen_at": "2026-10-10T00:05:54Z",
       "since": "2026-10-08T21:58:33Z",
       "state": "down",
       "url": "https://cartouchemalin.fr/sitemap.xml"
     }
   },
-  "generated_at": "2026-10-09T20:18:30Z",
+  "generated_at": "2026-10-10T00:05:54Z",
   "mode": "prod",
   "paused": false,
-  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/37986084907"
+  "run_url": "https://github.com/Siouldlh/iptvlist/actions/runs/38007536247"
 }
